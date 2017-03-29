@@ -86,8 +86,8 @@ case $MACOSX_DEPLOYMENT_TARGET in
        * ) unsupportedDepTarget ;;
 esac
 
-require "osxcross-conf"
-eval $(osxcross-conf)
+require "$(dirname -- $0)/osxcross-conf"
+eval $("$(dirname -- $0)/osxcross-conf")
 
 if [ -z "$OSXCROSS_TARGET_DIR" ]; then
   errorMsg "OSXCROSS_TARGET_DIR should be set"

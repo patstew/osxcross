@@ -186,9 +186,9 @@ fi
 
 # MacPorts symlinks
 pushd $TARGET_DIR/bin &>/dev/null # The BSD ln command doesn't support '-r'
-create_symlink $BASE_DIR/tools/osxcross-macports osxcross-macports
-create_symlink $BASE_DIR/tools/osxcross-macports osxcross-mp
-create_symlink $BASE_DIR/tools/osxcross-macports omp
+cp -f $BASE_DIR/tools/osxcross-macports osxcross-macports
+create_symlink osxcross-macports osxcross-mp
+create_symlink osxcross-macports omp
 popd &>/dev/null
 
 SDK=$(ls $TARBALL_DIR/MacOSX$SDK_VERSION*)
